@@ -1,0 +1,172 @@
+MODULE main
+DEFINE  v:= 3;
+	h:= 3;
+
+VAR 	
+	move : {u,d,l,r};
+	hpos: array 0..((h*v)-1) of 1..h;
+	vpos: array 0..((h*v)-1) of 1..v;
+
+ASSIGN
+
+-- TILE 0
+
+	 next(hpos[0]) := case
+	 	(move = u) & !(hpos[0] = 1) : hpos[0] - 1;
+	 	(move = d) & !(hpos[0] = h) : hpos[0] + 1;
+		 	TRUE : hpos[0];
+
+	 	esac;
+
+	 next(vpos[0]) := case
+	 	(move = l) & !(vpos[0] = 1) : vpos[0] - 1;
+	 	(move = r) & !(vpos[0] = v) : vpos[0] + 1;
+		 	TRUE : vpos[0];
+
+	 	esac;
+
+-- TILE 1
+	 
+	 next(hpos[1]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[1]) & (hpos[1] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[1]) & (hpos[1] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[1];
+	 	esac;
+	 	
+	 next(vpos[1]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[1]) & (vpos[1] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[1]) & (vpos[1] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[1];
+	 	esac;
+	 	
+-- TILE 2
+	 
+	 next(hpos[2]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[2]) & (hpos[2] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[2]) & (hpos[2] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[2];
+	 	esac;
+	 	
+	 next(vpos[2]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[2]) & (vpos[2] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[2]) & (vpos[2] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[2];
+	 	esac;
+	 	
+-- TILE 3
+	 
+	 next(hpos[3]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[3]) & (hpos[3] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[3]) & (hpos[3] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[3];
+	 	esac;
+	 	
+	 next(vpos[3]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[3]) & (vpos[3] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[3]) & (vpos[3] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[3];
+	 	esac;
+	 	
+-- TILE 4
+	 
+	 next(hpos[4]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[4]) & (hpos[4] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[4]) & (hpos[4] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[4];
+	 	esac;
+	 	
+	 next(vpos[4]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[4]) & (vpos[4] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[4]) & (vpos[4] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[4];
+	 	esac;
+	 	
+-- TILE 5
+	 
+	 next(hpos[5]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[5]) & (hpos[5] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[5]) & (hpos[5] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[5];
+	 	esac;
+	 	
+	 next(vpos[5]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[5]) & (vpos[5] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[5]) & (vpos[5] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[5];
+	 	esac;
+	 	
+-- TILE 6
+	 
+	 next(hpos[6]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[6]) & (hpos[6] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[6]) & (hpos[6] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[6];
+	 	esac;
+	 	
+	 next(vpos[6]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[6]) & (vpos[6] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[6]) & (vpos[6] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[6];
+	 	esac;
+	 	
+-- TILE 7
+	 
+	 next(hpos[7]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[7]) & (hpos[7] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[7]) & (hpos[7] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[7];
+	 	esac;
+	 	
+	 next(vpos[7]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[7]) & (vpos[7] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[7]) & (vpos[7] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[7];
+	 	esac;
+	 	
+-- TILE 8
+	 
+	 next(hpos[8]) := case
+	 	(move = d) & !(hpos[0] = h) & (vpos[0]=vpos[8]) & (hpos[8] = hpos[0]+1) | 
+	 	(move = u) & !(hpos[0] = 1) & (vpos[0]=vpos[8]) & (hpos[8] = hpos[0]-1) 
+	 			: hpos[0];
+	 	TRUE : hpos[8];
+	 	esac;
+	 	
+	 next(vpos[8]) := case
+	 	(move = r) & !(vpos[0] = v) & (hpos[0]=hpos[8]) & (vpos[8] = vpos[0]+1) | 
+	 	(move = l) & !(vpos[0] = 1) & (hpos[0]=hpos[8]) & (vpos[8] = vpos[0]-1) 
+	 			: vpos[0];
+	 	TRUE : vpos[8];
+	 	esac;
+
+-- Initialisation of Tiles
+
+	init(hpos[0]) :=1; init(vpos[0]) :=1;
+	init(hpos[1]) :=1; init(vpos[1]) :=2;
+	init(hpos[2]) :=1; init(vpos[2]) :=3;
+	init(hpos[3]) :=2; init(vpos[3]) :=1;
+	init(hpos[4]) :=2; init(vpos[4]) :=2;
+	init(hpos[5]) :=2; init(vpos[5]) :=3;
+	init(hpos[6]) :=3; init(vpos[6]) :=1;
+	init(hpos[7]) :=3; init(vpos[7]) :=2;
+	init(hpos[8]) :=3; init(vpos[8]) :=3; 	  
+	
+DEFINE 
+	goal := (hpos[0] = 3 & vpos[0] = 3 & hpos[1] = 3 & vpos[1] = 2 & hpos[2] = 3 & vpos[2] = 1 & hpos[3] = 2 & vpos[3] = 3 & hpos[4] = 2 & vpos[4] = 2 & hpos[5] = 2 & vpos[5] = 1 & hpos[6] = 1 & vpos[6] = 3 & hpos[7] = 1 & vpos[7] = 2 & hpos[8] = 1 & vpos[8] = 1);
+	
+	
+SPEC !EF(goal)
