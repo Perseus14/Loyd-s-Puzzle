@@ -2,7 +2,7 @@ This README file explains how to run the code interactively with NuSMV on an Ubu
 
 Steps to be followed:
 
-####	Building the model
+###	Building the model
 
 1. Get into the interactive mode (this takes you to the NuSMV shell prompt - NuSMV>)
 
@@ -24,7 +24,7 @@ Steps to be followed:
 
 	build_model
 
-####	Simulation
+###	Simulation
 
 6. Simulate the path of the specification mentioned.
 
