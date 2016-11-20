@@ -36,7 +36,7 @@ Steps to be followed:
 
 	show_traces -v
 
-    Note: should we mention what -v does?
+    Note: v indicates *verbose* mode
 
 
 One line command to run the code and get the entire output including all the possible BDD nodes and a counter example if the specification is false.
